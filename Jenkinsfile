@@ -7,7 +7,7 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/shazib96/peachpie-wordpress.git'
             }
         }
-        stage('Deploy on prod server'){
+        stage('Deploy on production server'){
             steps {
                 sshagent(['latest']) {
                    sh 'ssh -o StrictHostKeyChecking=no admin1@95.216.107.123'

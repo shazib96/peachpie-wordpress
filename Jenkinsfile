@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sshagent(['latest']) {
                    sh 'ssh -o StrictHostKeyChecking=no admin1@95.216.107.123'
-                   sh 'scp /var/lib/jenkins/workspace/test-deployment/* admin1@95.216.107.123:/home/admin1'
+                   sh 'scp /var/lib/jenkins/workspace/test-deployment/* admin1@95.216.107.123:/var/www/html'
                 }
             }
         }

@@ -9,9 +9,9 @@ pipeline {
         }
         stage('Deploy on live-production server'){
             steps {
-                 sshagent(['agent-key']) {               
+                sshagent(['wordpress']) {               
                    sh 'ssh -o StrictHostKeyChecking=no admin1@95.216.107.123'
-                   sh 'scp /var/lib/jenkins/workspace/wordpress-deployment/* admin1@95.216.107.123:/var/www/shazib.6lgx.com/html'
+                   sh 'scp -r /var/lib/jenkins/workspace/wordpress-deployment/* admin1@95.216.107.123:/var/www/shazib.6lgx.com/html'
                 }
             }
         }

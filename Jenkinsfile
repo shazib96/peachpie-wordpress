@@ -7,6 +7,11 @@ pipeline {
                 git 'https://github.com/shazib96/peachpie-wordpress.git'
             }
         }
+        stage('wordpress mysql deployment'){
+          steps{
+             sh './deploy.sh'
+            }
+         }   
         stage('Deploy on live-production server'){
             steps {
                 sshagent(['wordpress']) {               
